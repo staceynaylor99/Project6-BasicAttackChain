@@ -1,27 +1,44 @@
-Basic Attack Chain Detection
+Basic Attack Chain Detection (Project 6)
 
-This project shows how Windows logs capture early attacker behavior:
+This project demonstrates how a simple attacker sequence appears in Windows logs.
+It includes:
 
-Included Stages
+ 1. Failed Logon Attempts
 
-Failed logon attempts (Event ID 4625)
+Captured using Windows Security Log (Event ID 4625).
+Shows brute-force or password-guessing style failures.
 
-Enumeration with whoami and net user (Sysmon Event ID 1)
+ 2. Enumeration
 
-Privilege escalation using net.exe localgroup administrators (Sysmon Event ID 1)
+Commands like whoami and net user captured by Sysmon (Event ID 1).
+Represents attacker recon on the local system.
+
+ 3. Privilege Escalation Attempt
+
+net.exe localgroup administrators attackerUser /add
+Shows a clear attempt to add a new admin user.
+
+Files Included
+DetectionNotes.md
+
+Full analysis, written in plain language.
+
+/screenshots
+
+failed-logon.png
+
+recon.png
+
+privilege-escalation.png
 
 Skills Demonstrated
 
-Security log analysis
+Windows Event Log analysis
 
 Sysmon investigation
 
-Mapping attacker behavior
+Identifying attacker behaviors
 
-Incident documentation for SOC workflows
+Documenting findings like a SOC analyst
 
-Included Files
-
-DetectionNotes.md — written analysis and findings
-
-/screenshots — all event logs captured
+Mapping actions to ATT&CK techniques
